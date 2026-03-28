@@ -4,19 +4,13 @@ const CACHE_NAME = 'somos-cv-health-v1';
 
 // Files to cache on install
 const FILES_TO_CACHE = [
-  '/health/',
-  '/health/index.html',
-  '/health/cv-health-styles.css',
-  '/health/ri_logo.png',
-  '/health/ri-bg.mp4',
-  '/health/health-manifest.json'
-];
-
-// External resources to cache
-const EXTERNAL_CACHE = [
-  'https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap',
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
-  'https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap'
+  '/',
+  '/index.html',
+  '/cv-health-styles.css',
+  '/ri_logo.png',
+  '/ri-bg.mp4',
+  '/health-manifest.json',
+  '/cv-health.js'
 ];
 
 // Install event - cache core assets
@@ -25,10 +19,8 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('[SW] Caching core assets');
-      // Cache local files
       return cache.addAll(FILES_TO_CACHE).catch((err) => {
-        console.log('[SW] Cache error for local files:', err);
-        // Continue even if some files fail (like missing video)
+        console.log('[SW] Cache error:', err);
         return Promise.resolve();
       });
     })
@@ -56,8 +48,8 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   
-  // Skip non-GET requests and chrome-extension
-  if (event.request.method !== 'GET' || url.protocol === 'chrome-extension:') {
+  // Skip non-GET requests
+  if (event.request.method !== 'GET') {
     return;
   }
 
@@ -78,7 +70,6 @@ self.addEventListener('fetch', (event) => {
           return cachedResponse;
         }
         return fetch(event.request).then((networkResponse) => {
-          // Cache successful responses
           if (networkResponse && networkResponse.status === 200) {
             const responseToCache = networkResponse.clone();
             caches.open(CACHE_NAME).then((cache) => {
@@ -88,7 +79,6 @@ self.addEventListener('fetch', (event) => {
           return networkResponse;
         });
       }).catch(() => {
-        // If both cache and network fail, return a fallback
         if (event.request.destination === 'style') {
           return new Response('/* Fallback CSS */', { headers: { 'Content-Type': 'text/css' } });
         }
@@ -98,10 +88,11 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // For our own assets: network-first for API-like content, cache-first for static
-  if (url.pathname.includes('.mp4') || url.pathname.includes('.css') || 
-      url.pathname.includes('.js') && !url.pathname.includes('health-sw.js')) {
-    // Cache-first for static assets
+  // For our own assets: cache-first for static assets
+  if (url.pathname.includes('.mp4') || 
+      url.pathname.includes('.css') || 
+      url.pathname.includes('.js') && !url.pathname.includes('health-sw.js') ||
+      url.pathname.includes('.png')) {
     event.respondWith(
       caches.match(event.request).then((cachedResponse) => {
         if (cachedResponse) {
@@ -136,7 +127,7 @@ self.addEventListener('fetch', (event) => {
           }
           // Return offline page for HTML requests
           if (event.request.headers.get('accept').includes('text/html')) {
-            return caches.match('/health/index.html');
+            return caches.match('/index.html');
           }
           return new Response('Offline content not available', { status: 404 });
         });
@@ -154,7 +145,7 @@ self.addEventListener('push', (event) => {
     badge: '/ri_logo.png',
     vibrate: [200, 100, 200],
     data: {
-      url: data.url || '/health/'
+      url: data.url || '/'
     }
   };
   event.waitUntil(
@@ -166,6 +157,6 @@ self.addEventListener('push', (event) => {
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
   event.waitUntil(
-    clients.openWindow(event.notification.data.url || '/health/')
+    clients.openWindow(event.notification.data.url || '/')
   );
 });

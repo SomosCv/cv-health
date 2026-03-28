@@ -679,11 +679,10 @@
 
     <script>
 
-        if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/health-sw.js', { scope: '/health/' })
-    .catch(err => console.log('SW registration failed:', err));
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/health-sw.js', { scope: '/' })
+        .catch(err => console.log('SW registration failed:', err));
 }
-
         // ====================== DEMO OVERLAY FUNCTIONALITY ======================
         const demoOverlay = document.getElementById('demoOverlay');
         const demoCloseBtn = document.getElementById('demoCloseBtn');
