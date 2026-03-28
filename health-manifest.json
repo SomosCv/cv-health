@@ -1,0 +1,60 @@
+{
+  "name": "Somos.CV - Community Health Resources",
+  "short_name": "CV Health",
+  "description": "Health resources for Rhode Island's Cabo Verdean community. Information on addiction, overdose prevention, carbon monoxide, mold, bed bugs, and more.",
+  "start_url": "/health/",
+  "scope": "/health/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#003366",
+  "background_color": "#003366",
+  "categories": ["health", "education", "medical", "reference"],
+  "lang": "kea",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/ri_logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/ri_logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Overdose Response",
+      "short_name": "Overdose",
+      "description": "Learn how to respond to an overdose",
+      "url": "/health/#overdose",
+      "icons": [{ "src": "/ri_logo.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Addiction Resources",
+      "short_name": "Addiction",
+      "description": "Get help for addiction",
+      "url": "/health/#addiction",
+      "icons": [{ "src": "/ri_logo.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Emergency Preparedness",
+      "short_name": "Preparedness",
+      "description": "3 steps to be prepared",
+      "url": "/health/#preparedness",
+      "icons": [{ "src": "/ri_logo.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/ri_logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Somos.CV Health Resources Home Screen"
+    }
+  ]
+}

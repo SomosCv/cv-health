@@ -30,8 +30,10 @@
     <meta name="twitter:image" content="https://somos.cv/ri_logo.png">
     
     <link rel="icon" type="image/png" href="https://somos.cv/ri_logo.png">
-    <link rel="apple-touch-icon" href="https://somos.cv/ri_logo.png">
-    <link rel="canonical" href="https://somos.cv/health/resources">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CV Health">
+<link rel="apple-touch-icon" href="/ri_logo.png">    <link rel="canonical" href="https://somos.cv/health/resources">
     
     <!-- PWA Manifest (external) -->
     <link rel="manifest" href="/health-manifest.json">
@@ -1094,5 +1096,123 @@
         if (localStorage.getItem('a11y-high-contrast') === 'true') bodyEl.classList.add('high-contrast');
         updateActiveStates();
     </script>
+
+    <script>
+// ====================== PWA INSTALL PROMPT ======================
+let deferredPrompt;
+const installBanner = document.getElementById('pwaInstallBanner');
+
+// Listen for beforeinstallprompt event
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 76+ from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later
+  deferredPrompt = e;
+  // Show the install banner
+  if (installBanner) {
+    installBanner.style.display = 'block';
+  }
+});
+
+// Handle install banner click
+if (installBanner) {
+  installBanner.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    
+    // Show the install prompt
+    deferredPrompt.prompt();
+    
+    // Wait for the user to respond to the prompt
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`User response to the install prompt: ${outcome}`);
+    
+    // Hide the banner regardless of outcome
+    installBanner.style.display = 'none';
+    
+    // Clear the deferred prompt
+    deferredPrompt = null;
+  });
+}
+
+// Hide banner if app is already installed
+window.addEventListener('appinstalled', () => {
+  console.log('PWA was installed');
+  if (installBanner) {
+    installBanner.style.display = 'none';
+  }
+  deferredPrompt = null;
+});
+
+// ====================== UPDATE SERVICE WORKER REGISTRATION ======================
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/health-sw.js', { scope: '/health/' })
+    .then(registration => {
+      console.log('Service Worker registered with scope:', registration.scope);
+      
+      // Check for updates
+      registration.addEventListener('updatefound', () => {
+        const newWorker = registration.installing;
+        console.log('Service Worker update found!');
+        newWorker.addEventListener('statechange', () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            // New content is available, show update notification
+            console.log('New content is available; please refresh.');
+            // Optional: Show a toast/notification to user
+            showUpdateNotification();
+          }
+        });
+      });
+    })
+    .catch(err => {
+      console.log('Service Worker registration failed:', err);
+    });
+  
+  // Handle controller change (when service worker updates)
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!refreshing) {
+      refreshing = true;
+      window.location.reload();
+    }
+  });
+}
+
+// Optional: Show update notification
+function showUpdateNotification() {
+  const updateMsg = document.createElement('div');
+  updateMsg.textContent = '🔄 New update available! Refresh to get the latest content.';
+  updateMsg.style.cssText = `
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #FFB347;
+    color: #003366;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease;
+  `;
+  updateMsg.onclick = () => window.location.reload();
+  document.body.appendChild(updateMsg);
+  
+  // Auto remove after 8 seconds
+  setTimeout(() => {
+    if (updateMsg && updateMsg.remove) updateMsg.remove();
+  }, 8000);
+}
+
+// Add animation style
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+`;
+document.head.appendChild(style);
+</script>
 </body>
 </html>
