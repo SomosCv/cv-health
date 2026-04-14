@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="kea" translate="no" class="notranslate">
+<head>
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="kea">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="icon" type="image/png" href="/ri_logo.png">
+    <meta name="csrf-token" content="health-somos">
+    
+    <title data-i18n="page_title">Somos.CV - Recursos di Saúde Komunidadi Rhode Island | Guia di Saúde</title>
+    <meta name="title" content="Somos.CV - Rhode Island Health Resources">
+    <meta name="description" content="Educational resources on carbon monoxide, addiction, bed bugs, mold, preparedness, and more. Trusted health information for Rhode Island communities.">
+    <meta name="keywords" content="Rhode Island health, community resources, prevention, carbon monoxide, addiction, bed bugs, mold, preparedness, health equity zones">
+    <meta name="author" content="Somos CV - Healthy Homes Team">
+    <meta name="theme-color" content="#003366">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://somos.cv/health/resources">
+    <meta property="og:title" content="Somos.CV - Rhode Island Community Health">
+    <meta property="og:description" content="Trusted health education for Rhode Island families. Learn about prevention, local support, and community wellness.">
+    <meta property="og:image" content="https://somos.cv/ri_logo.png">
+    <meta property="og:site_name" content="Somos CV Saúde">
+    <meta property="og:locale" content="kea">
+    <meta property="og:locale:alternate" content="en_US">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Somos.CV - Rhode Island Community Health">
+    <meta name="twitter:description" content="Free health education resources for Rhode Island communities.">
+    <meta name="twitter:image" content="https://somos.cv/ri_logo.png">
+    
+    <link rel="icon" type="image/png" href="https://somos.cv/ri_logo.png">
+    <link rel="apple-touch-icon" href="https://somos.cv/ri_logo.png">
+    <link rel="canonical" href="https://somos.cv/health/resources">
+    
+    <link rel="manifest" href="/health-manifest.json">
+    
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="cv-health-styles.css">
+    
+    <!-- Translation Files -->
+    <script src="locales/kea.js"></script>
+    <script src="locales/en.js"></script>
+    
+    <style>
+        /* Additional styles for More Info button (matching site theme) */
+        .more-info-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #003366;
+            color: #ffffff;
+            border: 1px solid #003366;
+            padding: 12px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s;
+            gap: 12px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-family: 'Figtree', sans-serif;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .more-info-btn:hover {
+            background: #002244;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,51,102,0.3);
+            border-color: #002244;
+            transform: translateY(-2px);
+        }
+        
+        .modal-image {
+            display: block;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            margin: 15px auto;
+            border-radius: 16px;
+            border: 1px solid #e0e0e0;
+            background: #f5f5f5;
+            object-fit: contain;
+        }
+        
+        .image-modal .modal-content {
+            max-width: 700px;
+            border: 1px solid #003366;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-modal .modal-header {
+            background: #003366;
+            border-bottom: 1px solid #002244;
+        }
+        
+        .image-modal .modal-header h2 {
+            color: #ffffff;
+        }
+        
+        .image-modal .close-modal {
+            color: #ffffff;
+        }
+        
+        .image-modal .close-modal:hover {
+            background: #ffffff;
+            color: #003366;
+        }
+        
+        .highlight-text {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 4px solid #003366;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <video class="video-background" autoplay loop muted playsinline>
+        <source src="ri-bg.mp4" type="video/mp4">
+        <img src="ri_logo.png" alt="background">
+    </video>
+
+    <div id="demoOverlay" class="demo-overlay">
+        <div class="demo-card">
+            <div class="brand-logo">
+                <img src="ri_logo.png" alt="Somos Logo">
+            </div>
+            <div class="brand-name">CV-Heath.Care</div>
+            <h1>Rhode Island Community Health Resources</h1>
+            <div class="subhead">Recursos di Saúde pa Komunidadi | Trusted for RI Families</div>
+            <div class="demo-buttons">
+                <button id="demoCloseBtn" class="demo-btn"><i class="fas fa-play"></i> Demo</button>
+                <a href="proposal.html" target="_blank" class="demo-btn"><i class="fas fa-file-alt"></i> Proposal</a>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" style="width:100%; display:flex; justify-content:center;">
+        <div class="card">
+            <header aria-label="Site header">
+                <div class="brand-logo">
+                    <a href="/"><img src="ri_logo.png" alt="Somos Logo"></a>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn" id="langBtn">
+                        <i class="fas fa-globe"></i> <span id="current-lang-label">Kriolu (Cabo Verde)</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <a href="#" data-lang="kea">Kriolu (Cabo Verde)</a>
+                        <a href="#" data-lang="en">English</a>
+                    </div>
+                </div>
+                <h1 data-i18n="main_title">Recursos di Saúde Komunidadi Rhode Island</h1>
+                <div class="subhead" data-i18n="subhead">Informason i Guias pa Komunidadi Kabuverdianu</div>
+            </header>
+            
+            <div role="region" aria-label="Health resource buttons">
+                <div class="buttons-grid">
+                    <button class="button" data-modal="preAdoptionModal"><i class="fas fa-baby-carriage"></i> <span data-i18n="btn_pre_adoption">Nascimentu Antis di Adopsion</span></button>
+                    <button class="button" data-modal="addictionModal"><i class="fas fa-brain"></i> <span data-i18n="btn_addiction">Vísiu é Un Doença</span></button>
+                    <button class="button" data-modal="coModal"><i class="fas fa-skull"></i> <span data-i18n="btn_co">Intoxikason Monóxidu Carbónu</span></button>
+                    <button class="button" data-modal="healthEquityModal"><i class="fas fa-hand-holding-heart"></i> <span data-i18n="btn_equity">Zonas di Equidade na Saúde (RI)</span></button>
+                    <button class="button" data-modal="overdoseModal"><i class="fas fa-syringe"></i> <span data-i18n="btn_overdose">Modi ki bu age kontra Overdose</span></button>
+                    <button class="button" data-modal="perinatalModal"><i class="fas fa-folder-open"></i> <span data-i18n="btn_perinatal">Folleto Perinatal Uzu Sustansia</span></button>
+                    <button class="button" data-modal="bedBugsModal"><i class="fas fa-bug"></i> <span data-i18n="btn_bedbugs">Fatis sobri Insetu di Kama</span></button>
+                    <button class="button" data-modal="moldModal"><i class="fas fa-tint"></i> <span data-i18n="btn_mold">Fatis sobri Mofo</span></button>
+                    <button class="button" data-modal="preparednessModal"><i class="fas fa-clipboard-list"></i> <span data-i18n="btn_preparedness">3 Pason di Preparason</span></button>
+                    <button class="button" data-modal="chwModal"><i class="fas fa-user-md"></i> <span data-i18n="btn_chw">Kuzê ki é Trabadór Comunitáriu di Saúde</span></button>
+                </div>
+            </div>
+            
+            <footer role="contentinfo">
+                <div id="pwaInstallBanner" class="pwa-install-banner" style="display: none;">
+                    <i class="fas fa-download"></i> <span data-i18n="install_app">Instala Aplikason Somos.CV</span> <i class="fas fa-arrow-right"></i>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <div class="accessibility-widget" aria-label="Accessibility options">
+        <button id="a11y-large-text" aria-label="Toggle large text"><i class="fas fa-text-height"></i></button>
+        <button id="a11y-high-contrast" aria-label="Toggle high contrast"><i class="fas fa-adjust"></i></button>
+    </div>
+
+    <button id="demoReopenBtn" class="demo-reopen-btn" aria-label="Show demo information">
+        <i class="fas fa-info-circle"></i> Demo Info
+    </button>
+
+    <!-- MODALS WITH MORE INFO BUTTONS -->
+    <div class="modal-overlay" id="preAdoptionModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2><i class="fas fa-baby-carriage"></i> <span data-i18n="modal_pre_title">Nascimentu Antis di Adopsion</span></h2>
+                <button class="close-modal close-btn">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align: left; display: block;">
+                <div class="health-section">
+                    <div class="stat-badge" data-i18n="pre_stat"><i class="fas fa-heart"></i> Kada pai biológiku merese apoiu ku informason klaru sobri se opsons.</div>
+                    <h2 class="section-title" data-i18n="pre_what_title">Kuzê ki é Apoiu Antis di Adopsion?</h2>
+                    <p data-i18n="pre_what_text">Servisu di nascimentu antis di adopsion ta fornese apoiu emosional, médiku i legal pa kes ki sta konsidera adopsion pa se fidju. Es servisu ta garanti ki pais biológiku ntende se direitus, siméliu kuidadu prenatal i ten asesu konselhu duranti prucessu.</p>
+                    <h2 class="section-title" data-i18n="pre_rights_title">Bu Direitus Han Pai Biológiku</h2>
+                    <ul class="list-styled">
+                        <li data-i18n="pre_right1"><i class="fas fa-check-circle"></i> Direitu di risibi informason sen bias sobri adopsion.</li>
+                        <li data-i18n="pre_right2"><i class="fas fa-check-circle"></i> Direitu di skodje família ou ajénsia di adopsion.</li>
+                        <li data-i18n="pre_right3"><i class="fas fa-check-circle"></i> Direitu di ten representason legal i konselhu.</li>
+                        <li data-i18n="pre_right4"><i class="fas fa-check-circle"></i> Direitu di retira konsentimentu drentu un prazu (varia konforme stadu).</li>
+                        <li data-i18n="pre_right5"><i class="fas fa-check-circle"></i> Direitu di risibi apoiu pos-adiamentu i kuidadu médiku.</li>
+                    </ul>
+                    <h2 class="section-title" data-i18n="pre_resources_title">Rekursu na Rhode Island</h2>
+                    <div class="resources-grid">
+                        <div class="resource-card"><i class="fas fa-phone-alt"></i> <span data-i18n="pre_resource_helpline">Linha Ajuda Adopsion RI: 1-800-555-1234</span></div>
+                        <div class="resource-card"><i class="fas fa-gavel"></i> <span data-i18n="pre_resource_legal">Servisu Legal RI: 401-274-2652</span></div>
+                        <div class="resource-card"><i class="fas fa-hand-holding-heart"></i> <span data-i18n="pre_resource_counseling">Konselhu Adopsion: 401-421-5790</span></div>
+                        <div class="resource-card"><i class="fas fa-hospital-user"></i> <span data-i18n="pre_resource_medical">Kuidadu Prenatal: 1-800-942-7434</span></div>
+                    </div>
+                    <button class="more-info-btn" data-image-modal="preAdoptionImageModal"><i class="fas fa-image"></i> <span data-i18n="view_infographic">Odja Infográfiku</span> <i class="fas fa-arrow-right"></i></button>
+                    <div class="footer-note" data-i18n="pre_footer">Si bu sta konsidera adopsion, papia ku un konselheru ou asistenti sosial pa ntende tudu opsons. Bu ka sta só.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="addictionModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2><i class="fas fa-brain"></i> <span data-i18n="modal_addiction_title">Vísiu é Un Doença</span></h2>
+                <button class="close-modal close-btn">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align: left; display: block;">
+                <div class="health-section">
+                    <div class="stat-badge" data-i18n="addiction_stat"><i class="fas fa-chart-line"></i> Vísiu é un doença krónika di serebru, ka falha moral. Rekuperason é posivel ku tratamentu i apoiu.</div>
+                    <h2 class="section-title" data-i18n="addiction_what_title">Kuzê ki é Vísiu?</h2>
+                    <p data-i18n="addiction_what_text">Vísiu é un doença médika tratável, krónika, envolvi interason kompleksu entre sirkuitus serebral, genétika, ambiente i speriensias di vida. Pessoas ku vísiu ta uza substansia ou ten komportamentu ki ta torna kompulsivu i kontinua masmu ku konsekuénsia prejudisial.</p>
+                    <h2 class="section-title" data-i18n="addiction_signs_title">Sinais di Vísiu</h2>
+                    <div class="grid-2col">
+                        <div class="info-card">
+                            <ul class="list-styled">
+                                <li data-i18n="addiction_sign1"><i class="fas fa-capsules"></i> Perda di kontrolu di uzu substansia</li>
+                                <li data-i18n="addiction_sign2"><i class="fas fa-hand-peace"></i> Deseju intensu i preokupason</li>
+                                <li data-i18n="addiction_sign3"><i class="fas fa-bed"></i> Abandona responsabilidadi</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <ul class="list-styled">
+                                <li data-i18n="addiction_sign4"><i class="fas fa-users"></i> Distansiamentu di família i amigus</li>
+                                <li data-i18n="addiction_sign5"><i class="fas fa-chart-simple"></i> Toleránsia (meste más pa sinti efeitu)</li>
+                                <li data-i18n="addiction_sign6"><i class="fas fa-exclamation-triangle"></i> Kontinua uzu masmu ku danu</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h2 class="section-title" data-i18n="addiction_treatment_title">Tratamentu i Rekuperason</h2>
+                    <ul class="list-styled">
+                        <li data-i18n="addiction_treat1"><i class="fas fa-phone-alt"></i> Linha Ajuda SAMHSA: 1-800-662-4357 (konfidensial, 24/7)</li>
+                        <li data-i18n="addiction_treat2"><i class="fas fa-hospital-user"></i> Linha Ajuda Buprenorfina i Naloxona RI: 401-606-5456</li>
+                        <li data-i18n="addiction_treat3"><i class="fas fa-hand-holding-heart"></i> Apoiu lokal: Alcoólicos Anónimus, Narcóticos Anónimus, SMART Recovery</li>
+                        <li data-i18n="addiction_treat4"><i class="fas fa-check-circle"></i> Medikamentu pa trastornu di uzu opiódi (metadona, buprenorfina, naltrexona) é efikás.</li>
+                    </ul>
+                    <div class="resources-grid">
+                        <div class="resource-card"><i class="fas fa-globe"></i> <a href="https://www.samhsa.gov/find-help" target="_blank">samhsa.gov/find-help</a></div>
+                        <div class="resource-card"><i class="fas fa-building"></i> <span data-i18n="addiction_resource_ri">Departamentu di Saúde Konportamental RI</span></div>
+                        <div class="resource-card"><i class="fas fa-phone-alt"></i> <span data-i18n="addiction_resource_riphone">401-462-4691</span></div>
+                    </div>
+                    <button class="more-info-btn" data-image-modal="addictionImageModal"><i class="fas fa-image"></i> <span data-i18n="view_infographic">Odja Infográfiku</span> <i class="fas fa-arrow-right"></i></button>
+                    <div class="footer-note" data-i18n="addiction_footer">Rekuperason é posivel. Kompaixon i apoiu ta salva vidas. Si bu ou algen ki bu kre ta pasa por isu, buska ajuda oji.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="overdoseModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2><i class="fas fa-syringe"></i> <span data-i18n="modal_overdose_title">Modi ki bu age kontra Overdose</span></h2>
+                <button class="close-modal close-btn">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align: left; display: block;">
+                <div class="health-section">
+                    <div class="stat-badge" data-i18n="overdose_stat"><i class="fas fa-clock"></i> Kada sigundu ta konta. Konhese sinál i age dretu.</div>
+                    <h2 class="section-title" data-i18n="overdose_recognize_title">Reconhese Un Overdose</h2>
+                    <ul class="list-styled">
+                        <li data-i18n="overdose_sig1"><i class="fas fa-face-sleeping"></i> Pesoas ka ta responde ou ka ta disperta</li>
+                        <li data-i18n="overdose_sig2"><i class="fas fa-lungs"></i> Respiraçon lentu, superficial, ou paradu</li>
+                        <li data-i18n="overdose_sig3"><i class="fas fa-hand-peace"></i> Lábiu ou ponta di dedu blúia ou cinzentu</li>
+                        <li data-i18n="overdose_sig4"><i class="fas fa-syringe"></i> Som di sufoku ou gorgoleju</li>
+                        <li data-i18n="overdose_sig5"><i class="fas fa-heartbeat"></i> Korpu mole, pele pálidu</li>
+                    </ul>
+                    <h2 class="section-title" data-i18n="overdose_action_title">Pason pa Age</h2>
+                    <div class="grid-2col">
+                        <div class="info-card">
+                            <h4><i class="fas fa-phone-alt"></i> 1. <span data-i18n="overdose_step1_label">Liga 911</span></h4>
+                            <p data-i18n="overdose_step1">Dá lokalizason klaru. Flai ki pesoas ka sta respira ou ka ta responde. Léi di Bom Samaritano na Rhode Island ta proteje bu i pesoas di prosesu pa posse di dróga.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-syringe"></i> 2. <span data-i18n="overdose_step2_label">Administra Naloxona</span></h4>
+                            <p data-i18n="overdose_step2">Si disponivel, uza naloxona (Narcan) spray nazal ou injetável. El ta reverte overdose di opiódi sen efeitu prejudisial si dadu pa algen ki ka sta ku overdose. Naloxona grátis ta disponivel na farmásias i organizason komunidadi.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-hand-peace"></i> 3. <span data-i18n="overdose_step3_label">Respiraçon di Salvamentu</span></h4>
+                            <p data-i18n="overdose_step3">Inklina kabésa pa trás, levanta keixu, pita nariz, dá un respiraçon kada 5 segundus. Kontinua até pesoas respira só ou EMV txega.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-heartbeat"></i> 4. <span data-i18n="overdose_step4_label">Fika ku Pesoas</span></h4>
+                            <p data-i18n="overdose_step4">Ponha na pozison di rekuperason (di ladu) si sta respira ma inconsciente. Fika até ajuda txega.</p>
+                        </div>
+                    </div>
+                    <h2 class="section-title" data-i18n="overdose_naloxone_title">Nunde Bu Pode Obtén Naloxona</h2>
+                    <div class="resources-grid">
+                        <div class="resource-card"><i class="fas fa-store"></i> <span data-i18n="overdose_naloxone1">Farmásias partisipanti (sen preskrison)</span></div>
+                        <div class="resource-card"><i class="fas fa-hand-holding-heart"></i> <span data-i18n="overdose_naloxone2">Programas komunitáriu di prevençon di overdose</span></div>
+                        <div class="resource-card"><i class="fas fa-phone-alt"></i> <span data-i18n="overdose_naloxone3">Linha Ajuda Naloxona RI: 401-222-5960</span></div>
+                    </div>
+                    <button class="more-info-btn" data-image-modal="overdoseImageModal"><i class="fas fa-image"></i> <span data-i18n="view_infographic">Odja Infográfiku</span> <i class="fas fa-arrow-right"></i></button>
+                    <div class="footer-note" data-i18n="overdose_footer">Bu pode salba un vida. Leva naloxona, prende sinál, i age imediatamenti.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="perinatalModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2><i class="fas fa-folder-open"></i> <span data-i18n="modal_perinatal_title">Folleto Perinatal Uzu Sustansia</span></h2>
+                <button class="close-modal close-btn">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align: left; display: block;">
+                <div class="health-section">
+                    <div class="stat-badge" data-i18n="perinatal_stat"><i class="fas fa-fetus"></i> Apoiu pa un gravidez i bebé saudável ta kumesa ku kompaixon, ka julgamentu.</div>
+                    <h2 class="section-title" data-i18n="perinatal_why_title">Paké é Importanti</h2>
+                    <p data-i18n="perinatal_why_text">Uzu di substansia durante gravidez pode afeta mai i bebé. Má ku kuidadu apropriadu, tratamentu i apoiu, família pode atinjir rezultadu saudável. Estigma ta impedi minjeres di buska ajuda – nos sta li pa apoiabu.</p>
+                    <h2 class="section-title" data-i18n="perinatal_risks_title">Riziku Potensial</h2>
+                    <div class="grid-2col">
+                        <div class="info-card">
+                            <h4><i class="fas fa-baby"></i> <span data-i18n="perinatal_baby_label">Pa Bebé</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="perinatal_risk1">Nascimentu antis di ténpu i pezu baxu</li>
+                                <li data-i18n="perinatal_risk2">Síndrome di abstinénsia neonatal (NAS)</li>
+                                <li data-i18n="perinatal_risk3">Atrasu di dezenvolvimentu</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-female"></i> <span data-i18n="perinatal_mother_label">Pa Mai</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="perinatal_risk4">Preson altu i pré-eclâmpsia</li>
+                                <li data-i18n="perinatal_risk5">Infekson (HIV, hepatitis)</li>
+                                <li data-i18n="perinatal_risk6">Problema di saúde mental</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h2 class="section-title" data-i18n="perinatal_support_title">Apoiu – Sen Julgamentu</h2>
+                    <ul class="list-styled">
+                        <li data-i18n="perinatal_sup1"><i class="fas fa-hospital-user"></i> <strong>Projetu RESPECT:</strong> Kuidadu prenatal integradu i tratamentu di uzu substansia na Women & Infants Hospital – 401-274-1122</li>
+                        <li data-i18n="perinatal_sup2"><i class="fas fa-hand-holding-heart"></i> <strong>Rede Apoiu Pais RI:</strong> 401-467-6855</li>
+                        <li data-i18n="perinatal_sup3"><i class="fas fa-phone-alt"></i> <strong>Linha Ajuda Uzu Sustansia pa Grávidas:</strong> 1-800-662-4357</li>
+                    </ul>
+                    <h2 class="section-title" data-i18n="perinatal_tips_title">Dika pa un Gravidez Saudável</h2>
+                    <div class="resources-grid">
+                        <div class="resource-card" data-i18n="perinatal_tip1">Kuidadu prenatal sedu</div>
+                        <div class="resource-card" data-i18n="perinatal_tip2">Tratamentu asistidu ku medikamentu (MAT) é siguru</div>
+                        <div class="resource-card" data-i18n="perinatal_tip3">Ta fasi tudu konsulta pediátrika</div>
+                        <div class="resource-card" data-i18n="perinatal_tip4">Apoiu di amamentason si apropriadu</div>
+                    </div>
+                    <button class="more-info-btn" data-image-modal="perinatalImageModal"><i class="fas fa-image"></i> <span data-i18n="view_infographic">Odja Infográfiku</span> <i class="fas fa-arrow-right"></i></button>
+                    <div class="footer-note" data-i18n="perinatal_footer">Bu ka sta só. Pidi ajuda é sinal di forsa. Un futuru saudável pa bu i bu bebé é posivel.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="preparednessModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2><i class="fas fa-clipboard-list"></i> <span data-i18n="modal_preparedness_title">3 Pason di Preparason</span></h2>
+                <button class="close-modal close-btn">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align: left; display: block;">
+                <div class="health-section">
+                    <div class="stat-badge" data-i18n="prep_stat"><i class="fas fa-shield-alt"></i> Sta preparadu pode salba vidas. Kumesa ku es trés pason.</div>
+                    <h2 class="section-title" data-i18n="prep_step1_title">1. Faze un Planu</h2>
+                    <ul class="list-styled">
+                        <li data-i18n="prep_plan1"><i class="fas fa-comments"></i> Diskuti ku família modi ki bu ta kontata.</li>
+                        <li data-i18n="prep_plan2"><i class="fas fa-location-dot"></i> Skodje dous lugar pa atxa: un pertu di kaza, otu fora di bairru.</li>
+                        <li data-i18n="prep_plan3"><i class="fas fa-house-circle-exclamation"></i> Konhese rotas di evakuason i lokal di abrigu.</li>
+                        <li data-i18n="prep_plan4"><i class="fas fa-paw"></i> Inklui animal di estimason na planu.</li>
+                    </ul>
+                    <h2 class="section-title" data-i18n="prep_step2_title">2. Monta un Kit</h2>
+                    <div class="grid-2col">
+                        <div class="info-card">
+                            <h4><i class="fas fa-box-open"></i> <span data-i18n="prep_basic_label">Fornimentu Báziku</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="prep_kit1">Aguá (1 galon pa pesoas pa dia, 3 dias)</li>
+                                <li data-i18n="prep_kit2">Alimentu ki ka ta strega (3 dias)</li>
+                                <li data-i18n="prep_kit3">Lanterna, baterias, rádiu</li>
+                                <li data-i18n="prep_kit4">Kit di primerus socorrus</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-medkit"></i> <span data-i18n="prep_additional_label">Itens Adisional</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="prep_kit5">Medikamentu i fornimentu médiku</li>
+                                <li data-i18n="prep_kit6">Dokumentu inportanti (kópia)</li>
+                                <li data-i18n="prep_kit7">Dinheiru, karregadó di telefoni, kobertor</li>
+                                <li data-i18n="prep_kit8">Fralda, lençu umidu, formula pa bebé si meste</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h2 class="section-title" data-i18n="prep_step3_title">3. Manten Informadu</h2>
+                    <ul class="list-styled">
+                        <li data-i18n="prep_inform1"><i class="fas fa-mobile-alt"></i> Regista pa Alertas di Emergénsia RI: <a href="https://riema.ri.gov" target="_blank">riema.ri.gov</a></li>
+                        <li data-i18n="prep_inform2"><i class="fas fa-broadcast-tower"></i> Konhese estason di rádiu lokal pa atualizason di emergénsia.</li>
+                        <li data-i18n="prep_inform3"><i class="fas fa-cloud-rain"></i> Akumpanha previzon di tempu i avizu komunidadi.</li>
+                    </ul>
+                    <div class="resources-grid">
+                        <div class="resource-card"><i class="fas fa-globe"></i> <a href="https://www.ready.gov" target="_blank">ready.gov</a></div>
+                        <div class="resource-card"><i class="fas fa-building"></i> <span data-i18n="prep_resource_riema">RI Emergency Management Agency: 401-946-9996</span></div>
+                        <div class="resource-card"><i class="fas fa-phone-alt"></i> <span data-i18n="prep_resource_211">2-1-1 pa rekursu lokal</span></div>
+                    </div>
+                    <button class="more-info-btn" data-image-modal="preparednessImageModal"><i class="fas fa-image"></i> <span data-i18n="view_infographic">Odja Infográfiku</span> <i class="fas fa-arrow-right"></i></button>
+                    <div class="footer-note" data-i18n="prep_footer">Prepara oji pa pas di spiritu manhan. Reviza bu planu kada anu i atualiza kit konforme mester.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="chwModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2><i class="fas fa-user-md"></i> <span data-i18n="modal_chw_title">Kuzê ki é Trabadór Comunitáriu di Saúde</span></h2>
+                <button class="close-modal close-btn">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align: left; display: block;">
+                <div class="health-section">
+                    <div class="stat-badge" data-i18n="chw_stat"><i class="fas fa-hand-holding-heart"></i> TCS é membru di kunfiansa di kumunidadi ki ta konekta pesoas ku servisu di saúde i sosial.</div>
+                    <h2 class="section-title" data-i18n="chw_role_title">Papel di Trabadór Comunitáriu di Saúde</h2>
+                    <p data-i18n="chw_role_text">Trabadór Comunitáriu di Saúde (TCS) é un prufisional di saúde públika di front line, membru di kunfiansa di kumunidadi ki sirvi. El ta liga lakuna entre servisu di saúde i individus, fornese apoiu kulturalmente apropriadu, edukason di saúde i asisténsia di navegason.</p>
+                    <h2 class="section-title" data-i18n="chw_help_title">Modi ki TCS ta Ajuda</h2>
+                    <div class="grid-2col">
+                        <div class="info-card">
+                            <ul class="list-styled">
+                                <li data-i18n="chw_help1"><i class="fas fa-calendar-alt"></i> Marka konsulta médiku</li>
+                                <li data-i18n="chw_help2"><i class="fas fa-bus"></i> Organiza transporti pa konsulta</li>
+                                <li data-i18n="chw_help3"><i class="fas fa-apple-alt"></i> Fornese orientason di nutrison i benestar</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <ul class="list-styled">
+                                <li data-i18n="chw_help4"><i class="fas fa-file-signature"></i> Ajuda ku aplikason di seguro</li>
+                                <li data-i18n="chw_help5"><i class="fas fa-comments"></i> Oferece interpretason di língua</li>
+                                <li data-i18n="chw_help6"><i class="fas fa-hand-sparkles"></i> Konekta ku rekursu di moradia, alimentu i trabadju</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h2 class="section-title" data-i18n="chw_find_title">Atxa un TCS na Rhode Island</h2>
+                    <ul class="list-styled">
+                        <li data-i18n="chw_find1"><i class="fas fa-hospital"></i> Muitus centrus di saúde komunitáriu i klínikas kontrata TCS.</li>
+                        <li data-i18n="chw_find2"><i class="fas fa-globe"></i> Kontakta Asosiasaun TCS RI: <a href="https://www.richwa.org" target="_blank">richwa.org</a></li>
+                        <li data-i18n="chw_find3"><i class="fas fa-phone-alt"></i> Liga 2-1-1 i pidi servisu TCS na bu área.</li>
+                    </ul>
+                    <div class="resources-grid">
+                        <div class="resource-card"><i class="fas fa-chalkboard-user"></i> <span data-i18n="chw_career">Interesadu na torna TCS? Formason disponivel na faculdade lokal i departamentu di saúde.</span></div>
+                    </div>
+                    <button class="more-info-btn" data-image-modal="chwImageModal"><i class="fas fa-image"></i> <span data-i18n="view_infographic">Odja Infográfiku</span> <i class="fas fa-arrow-right"></i></button>
+                    <div class="footer-note" data-i18n="chw_footer">TCS é bu vizinhus, ajudabu na sistema di saúde. Kontata – es sta li pa bu.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="coModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2><i class="fas fa-fire-extinguisher"></i> <span data-i18n="modal_co_title">Intoxikason Monóxidu Carbónu</span></h2>
+                <button class="close-modal close-btn">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align: left; display: block;">
+                <div class="health-section">
+                    <div class="stat-badge" data-i18n="co_stat"><i class="fas fa-calendar-alt"></i> KADA ANU SENTENAS DI PESOAS NA STADUS UNIDUS TA MORE DI EXPOSIÇON INVOLUNTÁRIU A INTOXIKASON MONÓXIDU CARBÓNU.</div>
+                    <h2 class="section-title" data-i18n="co_what_title">KUZÊ KI É INTOXIKASON MONÓXIDU CARBÓNU?</h2>
+                    <p data-i18n="co_what_text">Monóxidu Carbónu (CO) é un gás produziu pa kema kualker tipu di kombustível – gás, óliu, kerosene, lenha ou karvon. El é invisível i sen txeu. Respira dimás pode ser fatal.</p>
+                    <h2 class="section-title" data-i18n="co_prevent_title">Konxi modi ki bu preveni intoxikason monóxidu carbónu!</h2>
+                    <div class="grid-2col">
+                        <div class="info-card">
+                            <h4><i class="fas fa-tools"></i> <span data-i18n="co_install_title">Instalason & Manutenson</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="co_install_1"><i class="fas fa-check-circle"></i> Lé i sigi instruson óras ki bu sta instala apareius.</li>
+                                <li data-i18n="co_install_2"><i class="fas fa-check-circle"></i> Sempri faze manutenson di apareius di akordu ku rekumendason di fabrikanti.</li>
+                                <li data-i18n="co_install_3"><i class="fas fa-check-circle"></i> Instala detetor di CO na várius área di bu kaza.</li>
+                                <li data-i18n="co_install_4"><i class="fas fa-check-circle"></i> Tira prova di alarmi di CO rutinariamente i troka baterias.</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-bell"></i> <span data-i18n="co_alarm_title">Lembreti di Alarmi CO</span></h4>
+                            <p data-i18n="co_alarm_text">Alarmi CO ta dá pas di spiritu má ka é sustitutu pa instalason, uzu i manutenson korretu di apareius.</p>
+                        </div>
+                    </div>
+                    <h2 class="section-title" data-i18n="co_sources_title">FONTI DI MONÓXIDU CARBÓNU</h2>
+                    <div>
+                        <p data-i18n="co_source1"><i class="fas fa-car"></i> Fumu di karu ou jerador na garaji</p>
+                        <p data-i18n="co_source2"><i class="fas fa-fire"></i> Akexedor di kuartu, fogon ku mau funsionamentu, fornu a gás</p>
+                        <p data-i18n="co_source3"><i class="fas fa-industry"></i> Fumu di jerador na kaza, poron ou spasu apertadu</p>
+                        <p data-i18n="co_source4"><i class="fas fa-water"></i> Ferruji ou skorrimentu di águá na ventilason/xaminé</p>
+                        <p data-i18n="co_source5"><i class="fas fa-brick"></i> Alvenaria solta na xaminé, fuliji, detritus ta kai</p>
+                    </div>
+                    <h2 class="section-title" data-i18n="co_symptoms_title">Konxi sinais di intoxikason CO!</h2>
+                    <div class="grid-2col">
+                        <div class="info-card">
+                            <h4><i class="fas fa-head-side-medical"></i> <span data-i18n="co_symptoms_initial_title">Sintomas inisial:</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="co_symptom1"><i class="fas fa-headache"></i> Dor di kabésa</li>
+                                <li data-i18n="co_symptom2"><i class="fas fa-dizzy"></i> Tontura</li>
+                                <li data-i18n="co_symptom3"><i class="fas fa-vomit"></i> Náuzea</li>
+                                <li data-i18n="co_symptom4"><i class="fas fa-bed"></i> Fadiga</li>
+                                <li data-i18n="co_symptom5"><i class="fas fa-lungs"></i> Falta di ar</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-exclamation-circle"></i> <span data-i18n="co_symptoms_additional_title">Sinais adisional:</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="co_symptom_add1"><i class="fas fa-home"></i> Dor di kabésa só óras ki sta drentu kaza</li>
+                                <li data-i18n="co_symptom_add2"><i class="fas fa-tree"></i> Bu ta sinti más midjor óras ki bu sta fóra</li>
+                                <li data-i18n="co_symptom_add3"><i class="fas fa-users"></i> Otus pesoas ten mesmu sintomas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="subsection-title" style="font-weight:600; margin:16px 0 8px;" data-i18n="co_what_to_do_title"><i class="fas fa-hand-holding-heart"></i> Kuzê ki bu debe faze si bu ten sintomas:</div>
+                    <ul class="list-styled">
+                        <li data-i18n="co_action1"><i class="fas fa-door-open"></i> Sai di área imediatamenti, buska ar fresku.</li>
+                        <li data-i18n="co_action2"><i class="fas fa-phone-alt"></i> Si é gravu, liga 911 di otu lokal.</li>
+                        <li data-i18n="co_action3"><i class="fas fa-fire-extinguisher"></i> Txoma korpu di bombero pa verifika nivel di CO.</li>
+                        <li data-i18n="co_action4"><i class="fas fa-hospital-user"></i> Kontakta Sentru di Venenu 800-222-1222.</li>
+                        <li data-i18n="co_action5"><i class="fas fa-stethoscope"></i> Konsulta médiku si sintomas persisti.</li>
+                    </ul>
+                    <div class="stat-badge" style="background:#1C4A6E;" data-i18n="co_unvented_warning"><i class="fas fa-ban"></i> AKEXEDOR SEN VENTILASON É INSEGURU!</div>
+                    <h2 class="section-title" data-i18n="co_resources_title">Rekursus</h2>
+                    <div class="resources-grid">
+                        <div class="resource-card" data-i18n="co_resource_poison">Kontroli di Venenu: 800-222-1222</div>
+                        <div class="resource-card">CDC: <a href="https://www.cdc.gov/co" target="_blank">cdc.gov/co</a></div>
+                        <div class="resource-card">CPSC: <a href="https://www.cpsc.gov" target="_blank">cpsc.gov/co</a></div>
+                        <div class="resource-card" data-i18n="co_resource_fire">Korpu di Bombero Lokal: 911</div>
+                    </div>
+                    <button class="more-info-btn" data-image-modal="coImageModal"><i class="fas fa-image"></i> <span data-i18n="view_infographic">Odja Infográfiku</span> <i class="fas fa-arrow-right"></i></button>
+                    <div class="footer-note" data-i18n="co_footer">Informason adaptadu di U.S. Consumer Product Safety Commission. Pa emergénsia liga 911.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="healthEquityModal">
+        <div class="modal-content" style="max-width: 850px;">
+            <div class="modal-header">
+                <h2><i class="fas fa-hand-holding-heart"></i> <span data-i18n="modal_equity_title">Zonas di Equidade na Saúde – Rhode Island</span></h2>
+                <button class="close-modal close-btn">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align: left; display: block;">
+                <div class="health-section">
+                    <div class="stat-badge" data-i18n="hez_stat"><i class="fas fa-chart-line"></i> 80% di saúde é determinadu fóra di konsultóriu médiku — na nos kaza, skólas, trabadjus i bairrus.</div>
+                    <h2 class="section-title" data-i18n="hez_what_title">KUZÊ KI É ZONAS DI EQUIDADE NA SAÚDE?</h2>
+                    <p data-i18n="hez_what_text">Zonas di Equidade na Saúde (HEZs) é inisiativa baziadu na lugar ki ta djunta komunidadi pa konstrui komunidadi saudável i rezilienti. Lideradu pa rezidentis i parserus di komunidadi, kada HEZ ta identifika fatoris sosial, ekonómiku i ambiental úniku ki ta afeta saúde i ta implementa planus di ason baziadu na dadus pa aborda kes fator.</p>
+                    <h2 class="section-title" data-i18n="hez_determinants_title">DETERMINANTIS DI SAÚDE</h2>
+                    <div class="grid-2col">
+                        <div class="info-card">
+                            <h4><i class="fas fa-chart-pie"></i> <span data-i18n="hez_det_chart_title">Kuzê ki ta forma nos saúde?</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="hez_det_behaviors"><i class="fas fa-running"></i> Konportamentu di Saúde: 30%</li>
+                                <li data-i18n="hez_det_genes"><i class="fas fa-dna"></i> Genis & Kuidadu Klíniku: 20%</li>
+                                <li data-i18n="hez_det_social"><i class="fas fa-city"></i> Fatoris Sosial/Ekonómiku/Ambiental: 50%</li>
+                            </ul>
+                            <p style="font-size:12px; margin-top:8px;" data-i18n="hez_det_framework">Baziadu na modelu Tarlov & Kindig</p>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-scale-balanced"></i> <span data-i18n="hez_equity_title">Equidadi vs Igualdadi</span></h4>
+                            <p data-i18n="hez_equity_text">Igualdadi ta da tudu algen mesmu rekursus. Equidadi ta da kada komunidadi kuzê ki es meste pa ten un txansi justu di ten bon saúde. Lugar ta importa.</p>
+                        </div>
+                    </div>
+                    <h2 class="section-title" data-i18n="hez_impact_title">INPÁKTU NA RHODE ISLAND</h2>
+                    <div class="grid-2col">
+                        <div class="info-card" data-i18n="hez_impact1"><i class="fas fa-brain"></i> <strong>Prumerus Sokorrus pa Saúde Mental:</strong> HEZ di Kondadu Washington treinó 1.000+ pulísia, klérigus, profesoris.</div>
+                        <div class="info-card" data-i18n="hez_impact2"><i class="fas fa-tree"></i> <strong>Ruas Kompletas & Verdi:</strong> HEZ Pawtucket/CF ajudu pasa primeru lei staduál pa ruas seguru.</div>
+                        <div class="info-card" data-i18n="hez_impact3"><i class="fas fa-walking"></i> <strong>Onibus Eskolar a Pé:</strong> HEZ Olneyville aumentu asiduidadi skolar.</div>
+                        <div class="info-card" data-i18n="hez_impact4"><i class="fas fa-smoking-ban"></i> <strong>Parkis Sen Fumu:</strong> HEZ Bristol bani fumu/vape na tudu parkis di vila.</div>
+                        <div class="info-card" data-i18n="hez_impact5"><i class="fas fa-handcuffs"></i> <strong>Diverson pa Tratamentu:</strong> HEZ West Warwick koloku klíniku ku pulísia pa uzu substansia.</div>
+                        <div class="info-card" data-i18n="hez_impact6"><i class="fas fa-home"></i> <strong>Advokasia pa Moradia:</strong> HEZ Southside avansu pulítika di moradia equitativu.</div>
+                    </div>
+                    <h2 class="section-title" data-i18n="hez_get_involved_title">MODI KI BU TA ENVOLVI</h2>
+                    <ul class="list-styled">
+                        <li data-i18n="hez_involve1"><i class="fas fa-hand-holding-usd"></i> Investi na HEZs ki sta ativu pa sustenta se trabadju.</li>
+                        <li data-i18n="hez_involve2"><i class="fas fa-handshake"></i> Faze parseria ku RIDOH pa finansiamentu inisial di un HEZ nobu.</li>
+                        <li data-i18n="hez_involve3"><i class="fas fa-building"></i> Torna un organizason "koluna vertebral" pa un HEZ.</li>
+                        <li data-i18n="hez_involve4"><i class="fas fa-gavel"></i> Advoka pa pulítika di finansiamentu baziadu na lugar.</li>
+                        <li data-i18n="hez_involve5"><i class="fas fa-users"></i> Apoia prusesu lideradu pa komunidadi na bu bairru.</li>
+                    </ul>
+                    <div class="resources-grid">
+                        <div class="resource-card"><i class="fas fa-globe"></i> <a href="https://health.ri.gov/hez" target="_blank">health.ri.gov/hez</a></div>
+                        <div class="resource-card"><i class="fas fa-envelope"></i> Christopher.Ausura@health.ri.gov</div>
+                        <div class="resource-card"><i class="fas fa-phone-alt"></i> <span data-i18n="hez_phone">Linha di Informason Saúde RI: 1-800-942-7434</span></div>
+                    </div>
+                    <button class="more-info-btn" data-image-modal="healthEquityImageModal"><i class="fas fa-image"></i> <span data-i18n="view_infographic">Odja Infográfiku</span> <i class="fas fa-arrow-right"></i></button>
+                    <div class="footer-note" data-i18n="hez_footer">Zonas di Equidade na Saúde é inisiativa asinatura di Rhode Island pa konstrui komunidadi saudável undi tudu algen ten un txansi justu pa prospera.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="bedBugsModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2><i class="fas fa-bug"></i> <span data-i18n="modal_bedbugs_title">Fatis sobri Insetu di Kama</span></h2>
+                <button class="close-modal close-btn">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align: left; display: block;">
+                <div class="health-section">
+                    <div class="stat-badge" data-i18n="bedbugs_stat"><i class="fas fa-exclamation-triangle"></i> Insetu di kama é karoneiru — es ta viaja na bagaji, ropa i móvel uzadu.</div>
+                    <h2 class="section-title" data-i18n="bedbugs_what_title">KUZÊ KI É INSETU DI KAMA?</h2>
+                    <p data-i18n="bedbugs_what_text">Insetu di kama é insetu pikinoti, xatiadu ki ta alimenta di sangi. Adultus ten más ou menus 1/4 polegada (tamanhu di largura di un lápis), kor kastanhu-avermelháu. Es ta sukundi na raxadas, koltxon, box spring i kabesera. Ativu di noti, es ta vive mésis sen alimenta.</p>
+                    <h2 class="section-title" data-i18n="bedbugs_why_title">PAKÉ KI ES STA TA VOLTA?</h2>
+                    <p data-i18n="bedbugs_why_text">Menas uzu di kimiku agresivu i aumentu di viajen ta permiti insetos di kama spadja. Es é karoneiru ekselenti i pode infesta kualker kaza independentimenti di limpeza.</p>
+                    <h2 class="section-title" data-i18n="bedbugs_health_title">EFEITU NA SAÚDE</h2>
+                    <div class="grid-2col">
+                        <div class="info-card">
+                            <h4><i class="fas fa-allergies"></i> <span data-i18n="bedbugs_bites_title">Mordedura & Reason</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="bedbugs_bite1"><i class="fas fa-hand-holding-heart"></i> Inxason vermelju, kumison</li>
+                                <li data-i18n="bedbugs_bite2"><i class="fas fa-sleeping"></i> Falta di sonu, ansiedadai</li>
+                                <li data-i18n="bedbugs_bite3"><i class="fas fa-lungs"></i> Fezes/kaska pode ativa asma</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-vial"></i> <span data-i18n="bedbugs_disease_title">Riziku di Doensa</span></h4>
+                            <p data-i18n="bedbugs_disease_text">Ka ten prova ki insetos di kama ta transmiti doensa di sangi. Má koça pode leva a infeson di pele.</p>
+                        </div>
+                    </div>
+                    <h2 class="section-title" data-i18n="bedbugs_spot_title">MODI KI BU TA DETEKTA UN INFESTASON</h2>
+                    <ul class="list-styled">
+                        <li data-i18n="bedbugs_spot1"><i class="fas fa-hand-sparkles"></i> Mordedura vermelju levantadu na membrus di família</li>
+                        <li data-i18n="bedbugs_spot2"><i class="fas fa-bug"></i> Insetos di kama vivu (pikinoti, xatiadu, kastanhu)</li>
+                        <li data-i18n="bedbugs_spot3"><i class="fas fa-tint"></i> Nódoa ferrujentu ou avermelhadu na lensol</li>
+                        <li data-i18n="bedbugs_spot4"><i class="fas fa-egg"></i> Ovus pikinoti na raxada/fenda</li>
+                        <li data-i18n="bedbugs_spot5"><i class="fas fa-skin"></i> Peli solta ou txeu mofadu</li>
+                    </ul>
+                    <h2 class="section-title" data-i18n="bedbugs_control_title">MODI KI BU TA KONTROLA INSETU DI KAMA</h2>
+                    <div class="grid-2col">
+                        <div class="info-card">
+                            <h4><i class="fas fa-broom"></i> <span data-i18n="bedbugs_pro_title">Ajuda Prufisional</span></h4>
+                            <p data-i18n="bedbugs_pro_text">Kontrata un prufisional di kontroli di praga lisensiadu. Liga RI DEM na 401-222-2781 pa un lista di prufisional lisensiadu.</p>
+                            <p><strong data-i18n="bedbugs_landlord_title">Responsabilidadi di senhoriu:</strong> <span data-i18n="bedbugs_landlord_text">Si infestason sta na dous ou más unidadi ou áreas komun, propriétariu debe trata. Kontakta Habitason Mínimu lokal si ka rezolve.</span></p>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-temperature-high"></i> <span data-i18n="bedbugs_diy_title">Dika pa Faze Bu Mesmu</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="bedbugs_diy1"><i class="fas fa-tshirt"></i> Lava ropa/lensol na águá kenti & seka na kalor altu</li>
+                                <li data-i18n="bedbugs_diy2"><i class="fas fa-couch"></i> Enkapa koltxon & almofada na kobertura di plástiku</li>
+                                <li data-i18n="bedbugs_diy3"><i class="fas fa-trash-alt"></i> Disfaze di móvel fortimenti infestadu</li>
+                                <li data-i18n="bedbugs_diy4"><i class="fas fa-hand-sparkles"></i> Aspira ben i veda raxada</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="resources-grid">
+                        <div class="resource-card"><i class="fas fa-phone-alt"></i> <span data-i18n="bedbugs_resource_health">Informason Saúde RI: 1-800-942-7434</span></div>
+                        <div class="resource-card"><i class="fas fa-tree"></i> <span data-i18n="bedbugs_resource_dem">Kontroli di Praga RI DEM: 401-222-2781</span></div>
+                        <div class="resource-card"><i class="fas fa-globe"></i> <a href="https://health.ri.gov/bedbugs" target="_blank">health.ri.gov/bedbugs</a></div>
+                    </div>
+                    <button class="more-info-btn" data-image-modal="bedBugsImageModal"><i class="fas fa-image"></i> <span data-i18n="view_infographic">Odja Infográfiku</span> <i class="fas fa-arrow-right"></i></button>
+                    <div class="footer-note" data-i18n="bedbugs_footer">Pa infestason persistente ki ta envolvi spasu partilhadu, kontakta Programa di Habitason Mínimu di bu sidadi/vila.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="moldModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2><i class="fas fa-tint"></i> <span data-i18n="modal_mold_title">Fatis sobri Mofo</span></h2>
+                <button class="close-modal close-btn">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align: left; display: block;">
+                <div class="health-section">
+                    <div class="stat-badge" data-i18n="mold_stat"><i class="fas fa-home"></i> Mofo ta krise undi ki ten umidadi — telyadu ku fuga, poron úmidu, kaza di banhu i áreas ku poku ventilason.</div>
+                    <h2 class="section-title" data-i18n="mold_what_title">KUZÊ KI É MOFO?</h2>
+                    <p data-i18n="mold_what_text">Mofo é un tipu di fungu ki ta prospera na kondison úmidu i molhadu. El ta reproduzi atravéz di sporu pikinoti ki ta viaja pa ar. Mofo pode krise na paredi, tetu, tecidu, karpeti i móvel. Embora maioria di mofo é inofensivu, alguns pode kauza problema di saúde i dana bu kaza.</p>
+                    <h2 class="section-title" data-i18n="mold_health_title">EFEITU DI MOFO NA SAÚDE</h2>
+                    <div class="grid-2col">
+                        <div class="info-card">
+                            <h4><i class="fas fa-lungs"></i> <span data-i18n="mold_resp_title">Problema respiratóriu</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="mold_resp1"><i class="fas fa-allergies"></i> Nariz trankadu, spira</li>
+                                <li data-i18n="mold_resp2"><i class="fas fa-cough"></i> Tosi, xiu na peitu</li>
+                                <li data-i18n="mold_resp3"><i class="fas fa-lungs"></i> Gatiliu pa asma</li>
+                                <li data-i18n="mold_resp4"><i class="fas fa-eye"></i> Iritason na odju & pele</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-shield-alt"></i> <span data-i18n="mold_risk_title">Kenha ki sta na riziku más altu?</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="mold_risk1"><i class="fas fa-child"></i> Kriansa & bebé</li>
+                                <li data-i18n="mold_risk2"><i class="fas fa-lungs"></i> Pesoas ku asma/alergia</li>
+                                <li data-i18n="mold_risk3"><i class="fas fa-heartbeat"></i> Indivíduus imunokomprometidu</li>
+                                <li data-i18n="mold_risk4"><i class="fas fa-user-plus"></i> Adultus idozu</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h2 class="section-title" data-i18n="mold_prevention_title">MODI KI BU TA PREVENI KRISIMENTU DI MOFO</h2>
+                    <div class="grid-2col">
+                        <div class="info-card">
+                            <h4><i class="fas fa-tint-slash"></i> <span data-i18n="mold_moisture_title">Kontrola Umidadi</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="mold_moisture1"><i class="fas fa-fan"></i> Uza ventilador di exauston na kaza di banhu & kuzinha</li>
+                                <li data-i18n="mold_moisture2"><i class="fas fa-water"></i> Konserta fuga logu</li>
+                                <li data-i18n="mold_moisture3"><i class="fas fa-wind"></i> Manten umidadi baxu di 50%</li>
+                                <li data-i18n="mold_moisture4"><i class="fas fa-drain"></i> Garanti drenaji korretu na volta di kaza</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-broom"></i> <span data-i18n="mold_clean_title">Limpa & Ventila</span></h4>
+                            <ul class="list-styled">
+                                <li data-i18n="mold_clean1"><i class="fas fa-window-maximize"></i> Abri janela óras ki posivel</li>
+                                <li data-i18n="mold_clean2"><i class="fas fa-soap"></i> Limpa superfisi ku mofo ku deterdjenti & águá</li>
+                                <li data-i18n="mold_clean3"><i class="fas fa-trash-alt"></i> Removi material molhadu (karpeti, drywall) si ka seka drentu 48h</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h2 class="section-title" data-i18n="mold_cleanup_title">ORIENTASON PA LIMPEZA DI MOFO</h2>
+                    <div class="info-card" style="margin:10px 0;">
+                        <ul class="list-styled">
+                            <li data-i18n="mold_cleanup1"><i class="fas fa-mask"></i> Uza máskara N-95, luva i óklus di proteçon</li>
+                            <li data-i18n="mold_cleanup2"><i class="fas fa-wind"></i> Abri janela pa ventilason</li>
+                            <li data-i18n="mold_cleanup3"><i class="fas fa-soap"></i> Esfrega superfisi duru ku deterdjenti i águá, dipos seka ben</li>
+                            <li data-i18n="mold_cleanup4"><i class="fas fa-trash"></i> Bota fóra material porozu (plaka di tetu, karpeti) si ten mofo</li>
+                            <li data-i18n="mold_cleanup5"><i class="fas fa-biohazard"></i> Pa infestason grandi (>10 pé kuadradu), konsidera ajuda prufisional</li>
+                        </ul>
+                    </div>
+                    <h2 class="section-title" data-i18n="mold_resources_title">Rekursus & Dika</h2>
+                    <div class="resources-grid">
+                        <div class="resource-card"><i class="fas fa-building"></i> EPA: <a href="https://www.epa.gov/mold" target="_blank">epa.gov/mold</a></div>
+                        <div class="resource-card"><i class="fas fa-hand-holding-heart"></i> Informason Mofo CDC: <a href="https://www.cdc.gov/mold" target="_blank">cdc.gov/mold</a></div>
+                        <div class="resource-card"><i class="fas fa-hard-hat"></i> <span data-i18n="mold_resource_housing">Autoridadi di Habitason lokal</span></div>
+                        <div class="resource-card"><i class="fas fa-tools"></i> <span data-i18n="mold_resource_landlord">Responsabilidadi di senhoriu: relata problema di umidadi</span></div>
+                    </div>
+                    <button class="more-info-btn" data-image-modal="moldImageModal"><i class="fas fa-image"></i> <span data-i18n="view_infographic">Odja Infográfiku</span> <i class="fas fa-arrow-right"></i></button>
+                    <div class="footer-note" data-i18n="mold_footer">Si bu odja mofo, aji rápidu pa limpa i seka. Problema di umidadi persistente ta exiji reparu prufisional. Pa preokupason di saúde, konsulta un médiku.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMAGE MODALS CONTAINER -->
+    <div id="imageModalsContainer"></div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/health-sw.js', { scope: '/health/' })
+                .catch(err => console.log('SW registration failed:', err));
+        }
+
+        // ====================== IMAGE MODAL DEFINITIONS ======================
+        const imageModalDefinitions = [
+            { key: 'preAdoptionImageModal', titleKey: 'Infográfiku di Nascimentu Antis di Adopsion', icon: 'fa-baby-carriage', img: 'images/pre-adoption-infographic.png' },
+            { key: 'addictionImageModal', titleKey: 'Infográfiku di Vísiu é Un Doença', icon: 'fa-brain', img: 'images/addiction-infographic.png' },
+            { key: 'overdoseImageModal', titleKey: 'Infográfiku di Resposta Overdose', icon: 'fa-syringe', img: 'images/overdose-infographic.png' },
+            { key: 'perinatalImageModal', titleKey: 'Infográfiku Perinatal Uzu Sustansia', icon: 'fa-folder-open', img: 'images/perinatal-infographic.png' },
+            { key: 'preparednessImageModal', titleKey: 'Infográfiku di Pason di Preparason', icon: 'fa-clipboard-list', img: 'images/preparedness-infographic.png' },
+            { key: 'chwImageModal', titleKey: 'Infográfiku di Trabadór Comunitáriu di Saúde', icon: 'fa-user-md', img: 'images/chw-infographic.png' },
+            { key: 'coImageModal', titleKey: 'Infográfiku di Intoxikason Monóxidu Carbónu', icon: 'fa-fire-extinguisher', img: 'images/co-infographic.png' },
+            { key: 'healthEquityImageModal', titleKey: 'Infográfiku di Zonas di Equidade na Saúde', icon: 'fa-hand-holding-heart', img: 'images/health-equity-infographic.png' },
+            { key: 'bedBugsImageModal', titleKey: 'Infográfiku di Insetu di Kama', icon: 'fa-bug', img: 'images/bed-bugs-infographic.png' },
+            { key: 'moldImageModal', titleKey: 'Infográfiku di Mofo', icon: 'fa-tint', img: 'images/mold-infographic.png' }
+        ];
+
+        // Build image modals
+        const imageContainer = document.getElementById('imageModalsContainer');
+        function buildImageModals() {
+            imageContainer.innerHTML = '';
+            imageModalDefinitions.forEach(def => {
+                const modalDiv = document.createElement('div');
+                modalDiv.className = 'modal-overlay image-modal';
+                modalDiv.id = def.key;
+                modalDiv.innerHTML = `
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2><i class="fas ${def.icon}"></i> ${def.titleKey}</h2>
+                            <button class="close-modal close-btn">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="stat-badge"><i class="fas fa-image"></i> Diagrama / Infográfiku</div>
+                            <img src="${def.img}" alt="${def.titleKey}" class="modal-image" onerror="this.src='ri_logo.png'; this.alt='Imaji ta ben';">
+                            <div class="highlight-text">
+                                <i class="fas fa-lightbulb"></i> <strong>Guia vizual pa referénsia.</strong>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                imageContainer.appendChild(modalDiv);
+            });
+        }
+        buildImageModals();
+
+        // ====================== DEMO OVERLAY FUNCTIONALITY ======================
+        const demoOverlay = document.getElementById('demoOverlay');
+        const demoCloseBtn = document.getElementById('demoCloseBtn');
+        const demoReopenBtn = document.getElementById('demoReopenBtn');
+
+        demoCloseBtn.addEventListener('click', () => demoOverlay.classList.add('hidden'));
+        demoReopenBtn.addEventListener('click', () => demoOverlay.classList.remove('hidden'));
+
+        // ====================== LANGUAGE SWITCHER ======================
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        const currentLangSpan = document.getElementById('current-lang-label');
+
+        let currentLang = 'kea';
+        const translations = window.translations || {};
+
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('show');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                langDropdown.classList.remove('show');
+            }
+        });
+
+        function setLanguage(langCode) {
+            const langNames = { kea: "Kriolu (Cabo Verde)", en: "English" };
+            currentLangSpan.textContent = langNames[langCode];
+            currentLang = langCode;
+
+            const t = translations[langCode] || translations.kea || {};
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key] !== undefined) {
+                    if (t[key].includes('<')) {
+                        el.innerHTML = t[key];
+                    } else {
+                        el.textContent = t[key];
+                    }
+                }
+            });
+
+            document.documentElement.lang = langCode;
+            document.querySelector('meta[http-equiv="Content-Language"]').setAttribute('content', langCode);
+            langDropdown.classList.remove('show');
+            localStorage.setItem('preferred-language', langCode);
+        }
+
+        document.querySelectorAll('.lang-dropdown a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                setLanguage(link.getAttribute('data-lang'));
+            });
+        });
+
+        // ====================== MODAL FUNCTIONALITY ======================
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Main modal triggers
+        document.querySelectorAll('[data-modal]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modalId = btn.getAttribute('data-modal');
+                openModal(modalId);
+            });
+        });
+
+        // Image modal triggers (More Info buttons)
+        document.querySelectorAll('[data-image-modal]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const imageModalId = btn.getAttribute('data-image-modal');
+                openModal(imageModalId);
+            });
+        });
+
+        // Close buttons
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('close-modal') || e.target.closest('.close-modal')) {
+                const modal = e.target.closest('.modal-overlay');
+                if (modal) closeModal(modal);
+            }
+            if (e.target.classList.contains('modal-overlay')) {
+                closeModal(e.target);
+            }
+        });
+
+        // ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay').forEach(modal => {
+                    if (modal.classList.contains('active')) closeModal(modal);
+                });
+            }
+        });
+
+        // Wait for translations to load then set language
+        function waitForTranslations() {
+            if (Object.keys(window.translations || {}).length > 0) {
+                const savedLang = localStorage.getItem('preferred-language') || 'kea';
+                setLanguage(savedLang);
+            } else {
+                setTimeout(waitForTranslations, 50);
+            }
+        }
+        waitForTranslations();
+
+        // ====================== ACCESSIBILITY TOGGLES ======================
+        const bodyEl = document.body;
+        const largeTextBtn = document.getElementById('a11y-large-text');
+        const highContrastBtn = document.getElementById('a11y-high-contrast');
+
+        function updateActiveStates() {
+            if (largeTextBtn) largeTextBtn.classList.toggle('active', bodyEl.classList.contains('large-text'));
+            if (highContrastBtn) highContrastBtn.classList.toggle('active', bodyEl.classList.contains('high-contrast'));
+            localStorage.setItem('a11y-large-text', bodyEl.classList.contains('large-text'));
+            localStorage.setItem('a11y-high-contrast', bodyEl.classList.contains('high-contrast'));
+        }
+
+        function toggleLargeText() { bodyEl.classList.toggle('large-text'); updateActiveStates(); }
+        function toggleHighContrast() { bodyEl.classList.toggle('high-contrast'); updateActiveStates(); }
+
+        if (largeTextBtn) largeTextBtn.addEventListener('click', toggleLargeText);
+        if (highContrastBtn) highContrastBtn.addEventListener('click', toggleHighContrast);
+
+        if (localStorage.getItem('a11y-large-text') === 'true') bodyEl.classList.add('large-text');
+        if (localStorage.getItem('a11y-high-contrast') === 'true') bodyEl.classList.add('high-contrast');
+        updateActiveStates();
+
+        // ====================== PWA INSTALL ======================
+        let deferredPrompt;
+        const installBanner = document.getElementById('pwaInstallBanner');
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            if (installBanner) installBanner.style.display = 'block';
+        });
+        
+        if (installBanner) {
+            installBanner.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    console.log(`User response: ${outcome}`);
+                    installBanner.style.display = 'none';
+                    deferredPrompt = null;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
