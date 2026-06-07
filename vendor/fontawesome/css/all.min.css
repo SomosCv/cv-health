@@ -1,0 +1,16 @@
+/* Minimal self-hosted icon fallback for the generated PWA. Replace with the official Font Awesome CSS and webfonts in production. */
+.fa-solid,.fa-regular,.fa-brands{font-style:normal;font-weight:900;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;display:inline-block;line-height:1}
+.fa-house:before{content:"⌂"}.fa-route:before{content:"➜"}.fa-list-check:before{content:"☑"}.fa-people-roof:before{content:"⌂"}.fa-bolt:before{content:"⚡"}.fa-phone-volume:before,.fa-phone:before{content:"☎"}.fa-gear:before{content:"⚙"}.fa-language:before{content:"文"}.fa-text-height:before{content:"T"}.fa-circle-half-stroke:before{content:"◐"}.fa-download:before{content:"↓"}.fa-house-medical:before{content:"⌂"}.fa-user-shield:before{content:"♜"}.fa-triangle-exclamation:before{content:"⚠"}.fa-file-pdf:before{content:"▣"}.fa-trash:before{content:"🗑"}.fa-rotate-left:before{content:"↺"}.fa-floppy-disk:before{content:"▣"}.fa-print:before{content:"⎙"}.fa-copy:before{content:"⧉"}.fa-file-export:before{content:"⇩"}.fa-eraser:before{content:"⌫"}.fa-circle-info:before{content:"i"}.fa-circle-check:before{content:"✓"}.fa-box-open:before{content:"□"}.fa-handshake-angle:before{content:"🤝"}.fa-map-location-dot:before{content:"⌖"}.fa-calendar-check:before{content:"☑"}.fa-tower-broadcast:before{content:"≋"}.fa-radio:before{content:"◉"}.fa-person-walking:before{content:"歩"}.fa-shield-halved:before{content:"◈"}.fa-arrow-up-right-from-square:before{content:"↗"}.fa-circle:before{content:"●"}
+
+/* Static no-npm fallback icons required by the Emergency Preparedness PWA. */
+.fa-address-book:before{content:"☏"}
+.fa-children:before{content:"♟"}
+.fa-cloud-bolt:before{content:"☁"}
+.fa-fire-extinguisher:before{content:"▰"}
+.fa-hand-holding-heart:before{content:"♡"}
+.fa-kit-medical:before{content:"✚"}
+.fa-link:before{content:"🔗"}
+.fa-notes-medical:before{content:"✚"}
+.fa-plug-circle-bolt:before{content:"⚡"}
+.fa-screwdriver-wrench:before{content:"⚒"}
+.fa-virus:before{content:"◌"}

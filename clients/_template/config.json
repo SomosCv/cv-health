@@ -1,0 +1,42 @@
+{
+  "clientId": "client-slug",
+  "appName": "Client Emergency Preparedness Guide",
+  "shortName": "Emergency Guide",
+  "description": "A mobile, offline-ready emergency preparedness guide configured for a client.",
+  "defaultLanguage": "en",
+  "languages": [
+    {
+      "code": "en",
+      "label": "English",
+      "nativeName": "English",
+      "dir": "ltr"
+    },
+    {
+      "code": "es",
+      "label": "Spanish",
+      "nativeName": "Espa\u00f1ol",
+      "dir": "ltr"
+    }
+  ],
+  "brand": {
+    "logo": "assets/logos/logo.png",
+    "background": "assets/images/background.jpg",
+    "primaryColor": "#e63946",
+    "secondaryColor": "#1d3557",
+    "accentColor": "#f4a261"
+  },
+  "features": {
+    "checklists": true,
+    "planBuilder": true,
+    "resourceSearch": true,
+    "quickMode": true,
+    "fontSizeToggle": true,
+    "darkMode": true,
+    "offline": true
+  },
+  "contentReview": {
+    "sourceTitle": "Source guide title",
+    "lastReviewed": "YYYY-MM-DD",
+    "owner": "Client agency or department"
+  }
+}
